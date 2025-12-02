@@ -1,0 +1,25 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FEFCE8"/>
+            <stop offset="100%" stop-color="#FEF9C3"/>
+        </linearGradient>
+    </defs>
+    <rect width="800" height="600" fill="url(#bg)"/>
+    
+    <!-- Abstract Shapes -->
+    <circle cx="700" cy="100" r="150" fill="#FACC15" opacity="0.2"/>
+    <circle cx="100" cy="500" r="200" fill="#FACC15" opacity="0.2"/>
+    
+    <!-- Central Icon Container -->
+    <circle cx="400" cy="250" r="120" fill="white" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.1))"/>
+    
+    <!-- Python Snake (Abstract) -->
+    <path d="M380 200 Q420 200 420 240 L420 260 Q420 300 380 300 L360 300 Q320 300 320 260 L320 240 Q320 200 360 200 Z" fill="#CA8A04" transform="translate(20, 0)"/>
+    <circle cx="370" cy="230" r="5" fill="white"/>
+    <circle cx="430" cy="270" r="5" fill="white"/>
+
+    <!-- Text -->
+    <text x="400" y="450" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#854D0E" text-anchor="middle">Python Full Stack</text>
+    <text x="400" y="500" font-family="Arial, sans-serif" font-size="24" fill="#A16207" text-anchor="middle">Development Course</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FAF5FF"/>
+            <stop offset="100%" stop-color="#F3E8FF"/>
+        </linearGradient>
+    </defs>
+    <rect width="800" height="600" fill="url(#bg)"/>
+    
+    <!-- Abstract Shapes -->
+    <circle cx="100" cy="100" r="150" fill="#D8B4FE" opacity="0.2"/>
+    <circle cx="700" cy="500" r="200" fill="#D8B4FE" opacity="0.2"/>
+    
+    <!-- Central Icon Container -->
+    <circle cx="400" cy="250" r="120" fill="white" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.1))"/>
+    
+    <!-- PHP Elephant (Abstract) -->
+    <ellipse cx="400" cy="250" rx="70" ry="50" fill="#9333EA"/>
+    <text x="400" y="270" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle">PHP</text>
+    
+    <!-- Text -->
+    <text x="400" y="450" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#6B21A8" text-anchor="middle">PHP Full Stack</text>
+    <text x="400" y="500" font-family="Arial, sans-serif" font-size="24" fill="#7E22CE" text-anchor="middle">Web Development</text>
+</svg>
