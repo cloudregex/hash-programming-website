@@ -64,53 +64,5 @@ window.addEventListener('scroll', function () {
     }
 });
 
-// Course Filtering Functionality
-const filterButtons = document.querySelectorAll('.filter-btn');
-const courseCards = document.querySelectorAll('.course-card');
-const noResults = document.getElementById('no-results');
 
-if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
-
-            // Update active button state
-            filterButtons.forEach(btn => {
-                btn.classList.remove('bg-blue-600', 'text-white');
-                btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-            });
-            button.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
-            button.classList.add('bg-blue-600', 'text-white');
-
-            // Filter courses
-            let visibleCount = 0;
-
-            courseCards.forEach(card => {
-                const categories = card.getAttribute('data-categories');
-
-                if (filter === 'all' || categories.includes(filter)) {
-                    card.style.display = 'block';
-                    // Add fade-in animation
-                    card.style.opacity = '0';
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.3s ease-in-out';
-                        card.style.opacity = '1';
-                    }, 10);
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Show/hide no results message
-            if (noResults) {
-                if (visibleCount === 0) {
-                    noResults.classList.remove('hidden');
-                } else {
-                    noResults.classList.add('hidden');
-                }
-            }
-        });
-    });
-}
 
