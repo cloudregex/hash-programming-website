@@ -1,0 +1,356 @@
+---
+layout: base.njk
+title: Our Courses | HashProgramming
+permalink: courses.html
+---
+
+<!-- Courses Hero Section -->
+<section class="relative pt-32 pb-12 lg:pt-40 lg:pb-20 overflow-hidden min-h-[50vh] flex items-center">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-blue-950 to-indigo-950 -z-10"></div>
+    
+    <div class="hidden sm:block absolute top-20 left-10 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+    <div class="hidden sm:block absolute bottom-20 right-10 w-96 h-96 bg-orange-500/30 rounded-full blur-3xl animate-pulse" style="animation-delay:1.5s;"></div>
+    
+    <div class="mx-auto px-6 max-w-7xl relative z-10 w-full">
+        <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-orange-500/30 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+                <span class="h-2 w-2 rounded-full bg-orange-500 animate-ping"></span>
+                <span class="text-white">🎓 Explore Our Courses</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+                Find Your Perfect
+                <span class="bg-gradient-to-r from-blue-400 to-cyan-500 bg-clip-text text-transparent"> Learning Path</span>
+            </h1>
+            
+            <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                Choose from our comprehensive range of courses designed to make you industry-ready
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses" class="py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+    
+    <div class="mx-auto px-6 max-w-7xl relative z-10">
+        
+        <!-- Section Header -->
+        <div class="text-center mb-4">
+            <span class="text-blue-600 font-semibold tracking-wider uppercase text-xs bg-blue-50 px-3 py-1 rounded-full border border-blue-100">All Courses</span>
+        </div>
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+                100% Job Oriented Courses. <span class="text-blue-600">Admissions Open!</span>
+            </h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button data-filter="all" class="filter-btn px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                All Courses
+            </button>
+            <button data-filter="programming" class="filter-btn px-5 py-2.5 bg-white text-slate-700 font-semibold rounded-full hover:bg-slate-50 transition-all border border-slate-200 hover:border-blue-300">
+                Programming Courses
+            </button>
+            <button data-filter="frontend" class="filter-btn px-5 py-2.5 bg-white text-slate-700 font-semibold rounded-full hover:bg-slate-50 transition-all border border-slate-200 hover:border-blue-300">
+                Frontend Courses
+            </button>
+            <button data-filter="backend" class="filter-btn px-5 py-2.5 bg-white text-slate-700 font-semibold rounded-full hover:bg-slate-50 transition-all border border-slate-200 hover:border-blue-300">
+                Backend Courses
+            </button>
+            <button data-filter="job-oriented" class="filter-btn px-5 py-2.5 bg-white text-slate-700 font-semibold rounded-full hover:bg-slate-50 transition-all border border-slate-200 hover:border-blue-300">
+                Job Oriented Courses
+            </button>
+            <button data-filter="internships" class="filter-btn px-5 py-2.5 bg-white text-slate-700 font-semibold rounded-full hover:bg-slate-50 transition-all border border-slate-200 hover:border-blue-300">
+                Internships
+            </button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="courses-grid">
+            
+            <!-- Card 1: Java Full Stack -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="programming,backend,job-oriented">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Best Seller</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-orange-50">
+                    <img src="./assets/images/courses/java.svg" alt="Java Full Stack Course" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-half text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(4.5)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Full Stack Development With JAVA + Project-Based Learning</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Master Java, Spring Boot, Hibernate, MySQL, and modern web technologies. Build real-world projects with hands-on training.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: MERN Stack -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="programming,frontend,backend,job-oriented">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">Popular</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-green-50">
+                    <img src="./assets/images/courses/mern.svg" alt="MERN Stack Course" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(5.0)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Full Stack Development With MERN + Project-Based Learning</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Learn MongoDB, Express.js, React, and Node.js. Create dynamic web applications with modern JavaScript stack.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3: PHP Full Stack -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="programming,backend,job-oriented">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">Trending</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-purple-50">
+                    <img src="./assets/images/courses/php.svg" alt="PHP Full Stack Course" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(4.0)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Full Stack Development With PHP + Project-Based Learning</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Master PHP, Laravel, MySQL, and build powerful web applications. Perfect for backend development careers.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 4: Android Development -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="programming,job-oriented">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-cyan-50">
+                    <img src="./assets/images/courses/android.svg" alt="Android Development Course" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-half text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(4.5)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Full Stack Development With Android + Project-Based Learning</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Build native Android apps with Kotlin, Java, and Firebase. Learn mobile development from scratch to deployment.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 5: Frontend Development -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="frontend,job-oriented">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full">Hot</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-pink-50">
+                    <img src="./assets/images/courses/uiux.svg" alt="UI/UX & Testing Course" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(5.0)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Complete UI/UX & Manual Testing + Project-Based Learning</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Design stunning interfaces with Figma and ensure quality with manual testing. Perfect for creative problem solvers.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 6: Python Full Stack -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="programming,backend,job-oriented">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-full">Featured</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-yellow-50">
+                    <img src="./assets/images/courses/python.svg" alt="Python Full Stack Course" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-half text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(4.5)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Full Stack Development With PYTHON + ERP - JAVA</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Learn Python, Django, Flask, and enterprise resource planning. Ideal for data-driven web development.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Enroll Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 7: React Internship -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="frontend,internships">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Internship</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-indigo-50">
+                    <img src="./assets/images/courses/mern.svg" alt="React Internship" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(5.0)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">React.js Frontend Development Internship</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Get hands-on experience building real-world React applications. Work on live projects and earn a certificate.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 8: Java Internship -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="backend,internships">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Internship</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-orange-50">
+                    <img src="./assets/images/courses/java.svg" alt="Java Internship" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-half text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(4.5)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Java Backend Development Internship</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Gain practical experience in Java development. Work with Spring Boot and build enterprise applications.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 9: Full Stack Internship -->
+            <div class="course-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden border border-slate-100" data-categories="programming,internships">
+                <div class="absolute top-3 left-3 z-10">
+                    <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">Internship</span>
+                </div>
+                
+                <div class="h-48 overflow-hidden relative bg-teal-50">
+                    <img src="./assets/images/courses/python.svg" alt="Full Stack Internship" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                </div>
+                
+                <div class="p-5">
+                    <div class="flex items-center gap-1 mb-2">
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <i class="bi bi-star-fill text-orange-400 text-xs"></i>
+                        <span class="text-xs text-slate-500 ml-1">(5.0)</span>
+                    </div>
+                    
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 line-clamp-2">Full Stack Development Internship</h3>
+                    
+                    <p class="text-sm text-slate-600 mb-4 line-clamp-3">Complete internship program covering both frontend and backend. Build complete web applications from scratch.</p>
+                    
+                    <a href="#contact" class="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-16">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-100 mb-4">
+                <i class="bi bi-search text-4xl text-slate-400"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">No courses found</h3>
+            <p class="text-slate-600">Try selecting a different category</p>
+        </div>
+    </div>
+</section>
