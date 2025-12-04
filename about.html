@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CodeMaster Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        secondary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delay': 'float 6s ease-in-out 2s infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'bounce-slow': 'bounce 3s ease-in-out infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'scale-in': 'scaleIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(249, 115, 22, 0.5)' },
+                            '50%': { boxShadow: '0 0 40px rgba(249, 115, 22, 0.8)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e1e2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #f97316, #3b82f6);
+            border-radius: 10px;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316, #3b82f6, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: gradient 5s ease infinite;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Card with Orange-Blue Border */
+        .card-bordered {
+            position: relative;
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+
+        .dark .card-bordered {
+            background: #1a1a2e;
+        }
+
+        .card-bordered::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #f97316, #3b82f6, #f97316);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            border-radius: inherit;
+            background-size: 200% 200%;
+            animation: gradient 5s ease infinite;
+        }
+
+        /* Neon Glow Orange-Blue */
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3),
+                0 0 40px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Blob Animation */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Page Section Animation */
+        .page-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .page-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline Styles */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #f97316, #3b82f6);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
+
+        /* Button Shine Effect */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shine::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-shine:hover::before {
+            left: 100%;
+        }
+
+        /* Stats Card */
+        .stats-card {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(59, 130, 246, 0.1));
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #f97316, #3b82f6);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            border-radius: inherit;
+        }
+
+        /* Team Card Hover */
+        .team-card:hover .team-image {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .team-card:hover .team-social {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-social {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        /* Value Card */
+        .value-card {
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-card:hover .value-icon {
+            transform: rotateY(180deg);
+        }
+
+        .value-icon {
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+        }
+
+        /* Partner Logo */
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gray-50 dark:bg-[#0a0a1a] text-gray-800 dark:text-white transition-colors duration-500 overflow-x-hidden">
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <!-- Gradient Blobs -->
+        <div class="blob w-96 h-96 bg-orange-500 top-0 -left-48 opacity-30 dark:opacity-20"></div>
+        <div class="blob w-96 h-96 bg-blue-500 bottom-0 -right-48 opacity-30 dark:opacity-20"
+            style="animation-delay: 2s;"></div>
+        <div class="blob w-64 h-64 bg-orange-400 top-1/2 left-1/2 opacity-20 dark:opacity-10"
+            style="animation-delay: 4s;"></div>
+
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-5 dark:opacity-10"
+            style="background-image: linear-gradient(rgba(249, 115, 22, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.5) 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="container mx-auto px-6 py-4">
+            <div class="glass rounded-2xl px-6 py-4 flex items-center justify-between border-2 border-orange-500/20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-400 to-blue-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-orange-500/30">
+                        <i class="fas fa-code text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold gradient-text">CodeMaster</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="nav-link relative py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors font-medium group">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="#about"
+                        class="nav-link relative py-2 text-orange-500 dark:text-orange-400 font-medium group">
+                        About
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 to-blue-500"></span>
+                    </a>
+                    <a href="index.html#courses"
+                        class="nav-link relative py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors font-medium group">
+                        Courses
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="index.html#contact"
+                        class="nav-link relative py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors font-medium group">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-blue-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </div>
+
+                <!-- Right Side -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark/Light Mode Toggle -->
+                    <button id="themeToggle"
+                        class="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300 focus:outline-none group border-2 border-orange-500/30">
+                        <div class="absolute inset-0 rounded-full overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 dark:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-100 dark:opacity-0 transition-opacity duration-300">
+                            </div>
+                        </div>
+                        <div
+                            class="relative w-6 h-6 bg-white rounded-full shadow-lg transform transition-transform duration-300 dark:translate-x-8 flex items-center justify-center">
+                            <i class="fas fa-sun text-orange-500 text-xs dark:hidden"></i>
+                            <i class="fas fa-moon text-blue-500 text-xs hidden dark:block"></i>
+                        </div>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="index.html#courses"
+                        class="hidden sm:block btn-shine px-6 py-2.5 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/30 transform hover:scale-105 transition-all duration-300"
+                        style="background-size: 200% auto;">
+                        Start Learning
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none">
+                        <span class="menu-line line1 w-6 h-0.5 bg-gray-700 dark:bg-white rounded transition-all"></span>
+                        <span class="menu-line line2 w-6 h-0.5 bg-gray-700 dark:bg-white rounded transition-all"></span>
+                        <span class="menu-line line3 w-6 h-0.5 bg-gray-700 dark:bg-white rounded transition-all"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu"
+                class="md:hidden glass rounded-2xl mt-4 p-6 hidden animate-slide-down border-2 border-orange-500/20">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html"
+                        class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
+                        <i class="fas fa-home mr-3 text-orange-500"></i> Home
+                    </a>
+                    <a href="#about"
+                        class="mobile-nav-link py-3 px-4 rounded-xl bg-orange-500/20 font-medium text-orange-500">
+                        <i class="fas fa-info-circle mr-3 text-blue-500"></i> About
+                    </a>
+                    <a href="index.html#courses"
+                        class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
+                        <i class="fas fa-book mr-3 text-orange-400"></i> Courses
+                    </a>
+                    <a href="index.html#contact"
+                        class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
+                        <i class="fas fa-envelope mr-3 text-blue-400"></i> Contact
+                    </a>
+                    <a href="index.html#courses"
+                        class="btn-shine py-3 px-4 bg-gradient-to-r from-orange-500 to-blue-500 text-white rounded-xl font-semibold text-center">
+                        Start Learning
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="about" class="min-h-screen flex items-center justify-center relative pt-32 pb-20 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <!-- Left Content -->
+                <div class="flex-1 text-center lg:text-left page-section">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center space-x-2 bg-orange-500/10 dark:bg-orange-500/20 px-4 py-2 rounded-full mb-6 border border-orange-500/30">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+                        <span class="text-sm font-medium text-orange-600 dark:text-orange-400">🎯 About CodeMaster
+                            Academy</span>
+                    </div>
+
+                    <!-- Heading -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                        <span class="block">Empowering the</span>
+                        <span class="gradient-text">Next Generation</span>
+                        <span class="block mt-2">of Developers</span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p
+                        class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        We're not just a coding academy — we're a movement. Since 2018, we've been transforming
+                        passionate learners into skilled developers who shape the future of technology.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#our-story"
+                            class="btn-shine group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 text-white rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/40 transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3"
+                            style="background-size: 200% auto;">
+                            <span>Our Story</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                        <a href="#team"
+                            class="group w-full sm:w-auto px-8 py-4 glass rounded-2xl font-bold text-lg hover:bg-orange-500/10 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 border-2 border-orange-500/30">
+                            <i
+                                class="fas fa-users text-orange-500 text-2xl group-hover:scale-110 transition-transform"></i>
+                            <span>Meet Our Team</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Image/Illustration -->
+                <div class="flex-1 relative page-section">
+                    <div class="relative w-full max-w-lg mx-auto">
+                        <!-- Main Image Container -->
+                        <div class="relative z-10 animate-float">
+                            <div class="card-bordered p-8 neon-glow">
+                                <!-- About Illustration -->
+                                <div
+                                    class="bg-gradient-to-br from-orange-500/20 to-blue-500/20 rounded-2xl p-8 text-center">
+                                    <div
+                                        class="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-orange-500/30">
+                                        <i class="fas fa-rocket text-white text-5xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold mb-2">Since 2018</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Transforming Lives Through Code</p>
+
+                                    <!-- Mini Stats -->
+                                    <div class="grid grid-cols-3 gap-4 mt-6">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-orange-500">10K+</div>
+                                            <div class="text-xs text-gray-500">Students</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-blue-500">50+</div>
+                                            <div class="text-xs text-gray-500">Courses</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-orange-400">95%</div>
+                                            <div class="text-xs text-gray-500">Success</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div
+                            class="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-xl animate-float-delay transform rotate-12 border-4 border-white dark:border-gray-800">
+                            <i class="fas fa-graduation-cap text-white text-4xl"></i>
+                        </div>
+
+                        <div
+                            class="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-xl animate-float transform -rotate-12 border-4 border-white dark:border-gray-800">
+                            <i class="fas fa-award text-white text-3xl"></i>
+                        </div>
+
+                        <div
+                            class="absolute top-1/2 -right-12 w-16 h-16 bg-gradient-to-br from-orange-300 to-orange-500 rounded-xl flex items-center justify-center shadow-xl animate-bounce-slow border-4 border-white dark:border-gray-800">
+                            <i class="fas fa-heart text-white text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#our-story"
+                class="flex flex-col items-center space-y-2 text-gray-500 dark:text-gray-400 hover:text-orange-500 transition-colors">
+                <span class="text-sm font-medium">Discover More</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== OUR STORY SECTION ==================== -->
+    <section id="our-story" class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Left - Image -->
+                <div class="flex-1 page-section">
+                    <div class="relative">
+                        <div class="card-bordered p-4 neon-glow">
+                            <div
+                                class="bg-gradient-to-br from-orange-500/10 to-blue-500/10 rounded-2xl p-8 aspect-square flex items-center justify-center">
+                                <div class="text-center">
+                                    <div class="w-40 h-40 mx-auto mb-6 relative">
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-br from-orange-500 to-blue-500 rounded-full animate-pulse-glow">
+                                        </div>
+                                        <div
+                                            class="absolute inset-2 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-lightbulb text-6xl gradient-text"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-3xl font-bold gradient-text mb-2">Our Vision</h3>
+                                    <p class="text-gray-600 dark:text-gray-400">Making quality tech education accessible
+                                        to everyone</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-orange-500/20 rounded-full blur-2xl"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
+                    </div>
+                </div>
+
+                <!-- Right - Content -->
+                <div class="flex-1 page-section">
+                    <span
+                        class="inline-block px-4 py-2 bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4 border border-orange-500/30">
+                        Our Story
+                    </span>
+                    <h2 class="text-4xl sm:text-5xl font-black mb-6">
+                        From a Small Idea to a <span class="gradient-text">Big Dream</span>
+                    </h2>
+                    <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p>
+                            <strong class="text-orange-500">CodeMaster Academy</strong> was founded in 2018 by a group
+                            of passionate developers who believed that quality coding education should be accessible to
+                            everyone, regardless of their background or financial situation.
+                        </p>
+                        <p>
+                            What started as weekend workshops in a small co-working space has now grown into one of
+                            India's most trusted online coding academies. Our journey has been fueled by one simple
+                            belief: <strong class="text-blue-500">everyone deserves the chance to learn to
+                                code.</strong>
+                        </p>
+                        <p>
+                            Today, we've helped over <strong class="text-orange-500">10,000+ students</strong> transform
+                            their careers, with graduates now working at top companies like Google, Microsoft, Amazon,
+                            and countless startups.
+                        </p>
+                    </div>
+
+                    <!-- Achievement Badges -->
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div
+                            class="flex items-center space-x-2 bg-orange-500/10 px-4 py-2 rounded-full border border-orange-500/30">
+                            <i class="fas fa-trophy text-orange-500"></i>
+                            <span class="text-sm font-medium">Best Coding Academy 2023</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-2 bg-blue-500/10 px-4 py-2 rounded-full border border-blue-500/30">
+                            <i class="fas fa-star text-blue-500"></i>
+                            <span class="text-sm font-medium">4.9/5 Rating</span>
+                        </div>
+                        <div
+                            class="flex items-center space-x-2 bg-orange-500/10 px-4 py-2 rounded-full border border-orange-500/30">
+                            <i class="fas fa-certificate text-orange-400"></i>
+                            <span class="text-sm font-medium">ISO Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MISSION & VISION SECTION ==================== -->
+    <section class="py-24 relative bg-gradient-to-b from-transparent via-orange-500/5 to-transparent">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16 page-section">
+                <span
+                    class="inline-block px-4 py-2 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
+                    Mission & Vision
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                    What <span class="gradient-text">Drives Us</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Mission Card -->
+                <div class="page-section">
+                    <div
+                        class="card-bordered p-8 h-full hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/30">
+                                <i class="fas fa-bullseye text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Our Mission</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                            To democratize technology education and empower individuals from all backgrounds to build
+                            successful careers in tech. We believe that with the right guidance and resources, anyone
+                            can become a skilled developer.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-orange-500"></i>
+                                <span>Provide industry-relevant curriculum</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-orange-500"></i>
+                                <span>Offer affordable education for all</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-orange-500"></i>
+                                <span>Support career growth and placement</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="page-section" style="transition-delay: 0.1s;">
+                    <div
+                        class="card-bordered p-8 h-full hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                                <i class="fas fa-eye text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Our Vision</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
+                            To become the world's most trusted platform for tech education, creating a global community
+                            of skilled developers who innovate and create solutions that make a positive impact on
+                            society.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                <span>Reach 1 million students by 2030</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                <span>Expand to 50+ countries globally</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                <span>Partner with 500+ tech companies</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CORE VALUES SECTION ==================== -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16 page-section">
+                <span
+                    class="inline-block px-4 py-2 bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4 border border-orange-500/30">
+                    Core Values
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                    Values That <span class="gradient-text">Define Us</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    These core principles guide everything we do at CodeMaster Academy
+                </p>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="page-section value-card">
+                    <div
+                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+                        <div
+                            class="value-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/30">
+                            <i class="fas fa-heart text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Passion</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">We love what we do and it shows in
+                            everything we create</p>
+                    </div>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="page-section value-card" style="transition-delay: 0.1s;">
+                    <div
+                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+                        <div
+                            class="value-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                            <i class="fas fa-gem text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Excellence</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">We strive for the highest quality in our
+                            courses and support</p>
+                    </div>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="page-section value-card" style="transition-delay: 0.2s;">
+                    <div
+                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+                        <div
+                            class="value-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/30">
+                            <i class="fas fa-users text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Community</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">We believe in the power of learning and
+                            growing together</p>
+                    </div>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="page-section value-card" style="transition-delay: 0.3s;">
+                    <div
+                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+                        <div
+                            class="value-icon w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30">
+                            <i class="fas fa-rocket text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Innovation</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">We constantly evolve to stay ahead of
+                            industry trends</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS SECTION ==================== -->
+    <section class="py-24 relative bg-gradient-to-r from-orange-500/10 via-blue-500/10 to-orange-500/10">
+        <div class="container mx-auto px-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="page-section">
+                    <div class="stats-card rounded-2xl p-8 text-center bg-white dark:bg-gray-900">
+                        <div
+                            class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-graduate text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-black gradient-text mb-2 counter" data-target="10000">0</div>
+                        <div class="text-gray-600 dark:text-gray-400 font-medium">Students Trained</div>
+                    </div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="page-section" style="transition-delay: 0.1s;">
+                    <div class="stats-card rounded-2xl p-8 text-center bg-white dark:bg-gray-900">
+                        <div
+                            class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-book-open text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-black gradient-text mb-2 counter" data-target="50">0</div>
+                        <div class="text-gray-600 dark:text-gray-400 font-medium">Expert Courses</div>
+                    </div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="page-section" style="transition-delay: 0.2s;">
+                    <div class="stats-card rounded-2xl p-8 text-center bg-white dark:bg-gray-900">
+                        <div
+                            class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-briefcase text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-black gradient-text mb-2 counter" data-target="500">0</div>
+                        <div class="text-gray-600 dark:text-gray-400 font-medium">Hiring Partners</div>
+                    </div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="page-section" style="transition-delay: 0.3s;">
+                    <div class="stats-card rounded-2xl p-8 text-center bg-white dark:bg-gray-900">
+                        <div
+                            class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-percentage text-white text-2xl"></i>
+                        </div>
+                        <div class="text-4xl font-black gradient-text mb-2 counter" data-target="95">0</div>
+                        <div class="text-gray-600 dark:text-gray-400 font-medium">Placement Rate %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TIMELINE SECTION ==================== -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16 page-section">
+                <span
+                    class="inline-block px-4 py-2 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
+                    Our Journey
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                    Milestones <span class="gradient-text">We've Achieved</span>
+                </h2>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="timeline-line hidden md:block"></div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- 2018 -->
+                    <div class="page-section flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-1 md:text-right order-2 md:order-1">
+                            <div
+                                class="card-bordered p-6 inline-block hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+                                <span class="text-sm text-orange-500 font-semibold">January 2018</span>
+                                <h3 class="text-xl font-bold mt-2 mb-3">The Beginning</h3>
+                                <p class="text-gray-600 dark:text-gray-400">CodeMaster Academy was founded with a
+                                    mission to make coding education accessible to everyone. Started with just 3 courses
+                                    and 50 students.</p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2 z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg">
+                                <i class="fas fa-flag text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 order-3 hidden md:block"></div>
+                    </div>
+
+                    <!-- 2019 -->
+                    <div class="page-section flex flex-col md:flex-row items-center gap-8"
+                        style="transition-delay: 0.1s;">
+                        <div class="flex-1 hidden md:block"></div>
+                        <div class="z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg">
+                                <i class="fas fa-chart-line text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div
+                                class="card-bordered p-6 inline-block hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+                                <span class="text-sm text-blue-500 font-semibold">June 2019</span>
+                                <h3 class="text-xl font-bold mt-2 mb-3">1000 Students Milestone</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Reached our first major milestone of 1000
+                                    students. Launched 10 new courses and expanded our instructor team to 15 experts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2020 -->
+                    <div class="page-section flex flex-col md:flex-row items-center gap-8"
+                        style="transition-delay: 0.2s;">
+                        <div class="flex-1 md:text-right order-2 md:order-1">
+                            <div
+                                class="card-bordered p-6 inline-block hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+                                <span class="text-sm text-orange-500 font-semibold">March 2020</span>
+                                <h3 class="text-xl font-bold mt-2 mb-3">Going Fully Online</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Transitioned to a fully online platform
+                                    during the pandemic. Launched live interactive classes and 24/7 student support.</p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2 z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg">
+                                <i class="fas fa-laptop text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 order-3 hidden md:block"></div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="page-section flex flex-col md:flex-row items-center gap-8"
+                        style="transition-delay: 0.3s;">
+                        <div class="flex-1 hidden md:block"></div>
+                        <div class="z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg">
+                                <i class="fas fa-handshake text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div
+                                class="card-bordered p-6 inline-block hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+                                <span class="text-sm text-blue-500 font-semibold">August 2022</span>
+                                <h3 class="text-xl font-bold mt-2 mb-3">Partnership with Tech Giants</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Established partnerships with 100+ companies
+                                    including Google, Microsoft, and Amazon for student placements.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="page-section flex flex-col md:flex-row items-center gap-8"
+                        style="transition-delay: 0.4s;">
+                        <div class="flex-1 md:text-right order-2 md:order-1">
+                            <div
+                                class="card-bordered p-6 inline-block hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+                                <span class="text-sm text-orange-500 font-semibold">Present 2024</span>
+                                <h3 class="text-xl font-bold mt-2 mb-3">10,000+ Students & Growing</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Now serving 10,000+ students with 50+
+                                    courses, 30+ expert instructors, and a 95% placement rate. The journey continues!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="order-1 md:order-2 z-10">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-orange-500 to-blue-500 rounded-full flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg animate-pulse-glow">
+                                <i class="fas fa-star text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 order-3 hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TEAM SECTION ==================== -->
+    <section id="team" class="py-24 relative bg-gradient-to-b from-transparent via-blue-500/5 to-transparent">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16 page-section">
+                <span
+                    class="inline-block px-4 py-2 bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4 border border-orange-500/30">
+                    Our Team
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                    Meet the <span class="gradient-text">Experts</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Learn from industry veterans who have worked at the world's top tech companies
+                </p>
+            </div>
+
+            <!-- Leadership Team -->
+            <h3 class="text-2xl font-bold text-center mb-8 page-section">Leadership Team</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- CEO -->
+                <div class="page-section team-card">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 overflow-hidden">
+                        <div class="relative w-32 h-32 mx-auto mb-6">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-500 to-blue-500 rounded-full animate-pulse-glow">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-4xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1">Vikram Sharma</h4>
+                        <p class="text-orange-500 font-medium mb-2">Founder & CEO</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Ex-Google | 15 Years Exp | IIT Delhi
+                        </p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Passionate about democratizing tech
+                            education and building the next generation of developers.</p>
+                        <div class="team-social flex justify-center space-x-3">
+                            <a href="#"
+                                class="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTO -->
+                <div class="page-section team-card" style="transition-delay: 0.1s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden">
+                        <div class="relative w-32 h-32 mx-auto mb-6">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full animate-pulse-glow">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-4xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1">Priya Menon</h4>
+                        <p class="text-blue-500 font-medium mb-2">Co-Founder & CTO</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Ex-Microsoft | 12 Years Exp | MIT
+                            Graduate</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Leading our technology initiatives and
+                            ensuring the best learning experience for students.</p>
+                        <div class="team-social flex justify-center space-x-3">
+                            <a href="#"
+                                class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COO -->
+                <div class="page-section team-card" style="transition-delay: 0.2s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-300 overflow-hidden">
+                        <div class="relative w-32 h-32 mx-auto mb-6">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-orange-400 to-blue-400 rounded-full animate-pulse-glow">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-4xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1">Arjun Reddy</h4>
+                        <p class="text-orange-400 font-medium mb-2">Co-Founder & COO</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Ex-Amazon | 10 Years Exp | IIM
+                            Bangalore</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Managing operations and ensuring smooth
+                            delivery of all our educational programs.</p>
+                        <div class="team-social flex justify-center space-x-3">
+                            <a href="#"
+                                class="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructors -->
+            <h3 class="text-2xl font-bold text-center mb-8 page-section">Our Expert Instructors</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Instructor 1 -->
+                <div class="page-section team-card">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Rahul Sharma</h4>
+                        <p class="text-orange-500 font-medium text-sm mb-2">Full Stack Developer</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-Google | React, Node.js</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="page-section team-card" style="transition-delay: 0.1s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Priya Patel</h4>
+                        <p class="text-blue-500 font-medium text-sm mb-2">Data Scientist</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-Microsoft | Python, ML</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="page-section team-card" style="transition-delay: 0.2s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-500 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-orange-400 to-orange-300 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Amit Kumar</h4>
+                        <p class="text-orange-400 font-medium text-sm mb-2">Mobile Developer</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-Amazon | Flutter, Swift</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 4 -->
+                <div class="page-section team-card" style="transition-delay: 0.3s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-blue-400 to-blue-300 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Sneha Reddy</h4>
+                        <p class="text-blue-400 font-medium text-sm mb-2">DevOps Engineer</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-Netflix | Docker, K8s</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 5 -->
+                <div class="page-section team-card" style="transition-delay: 0.4s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-blue-500 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Karan Singh</h4>
+                        <p class="text-orange-500 font-medium text-sm mb-2">Cloud Architect</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-AWS | Cloud, Security</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 6 -->
+                <div class="page-section team-card" style="transition-delay: 0.5s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Ananya Iyer</h4>
+                        <p class="text-blue-500 font-medium text-sm mb-2">AI Engineer</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-OpenAI | Deep Learning</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 7 -->
+                <div class="page-section team-card" style="transition-delay: 0.6s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-blue-400 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-orange-400 to-orange-300 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Rohan Joshi</h4>
+                        <p class="text-orange-400 font-medium text-sm mb-2">Blockchain Dev</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Web3, Solidity, Ethereum</p>
+                    </div>
+                </div>
+
+                <!-- Instructor 8 -->
+                <div class="page-section team-card" style="transition-delay: 0.7s;">
+                    <div
+                        class="card-bordered p-6 text-center hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <div class="relative w-24 h-24 mx-auto mb-4">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-orange-400 rounded-full">
+                            </div>
+                            <div
+                                class="team-image absolute inset-1 bg-gradient-to-br from-blue-400 to-blue-300 rounded-full flex items-center justify-center transition-transform duration-300">
+                                <i class="fas fa-user text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-bold mb-1">Meera Nair</h4>
+                        <p class="text-blue-400 font-medium text-sm mb-2">UI/UX Designer</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Ex-Adobe | Figma, Design</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PARTNERS SECTION ==================== -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-16 page-section">
+                <span
+                    class="inline-block px-4 py-2 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
+                    Our Partners
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                    Trusted by <span class="gradient-text">Industry Leaders</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Our graduates work at the world's top technology companies
+                </p>
+            </div>
+
+            <!-- Partner Logos -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-6 glass rounded-2xl border border-orange-500/20 hover:border-orange-500/50 transition-all">
+                    <i class="fab fa-google text-5xl text-gray-600 dark:text-gray-400"></i>
+                </div>
+                <div class="page-section partner-logo flex items-center justify-center p-6 glass rounded-2xl border border-blue-500/20 hover:border-blue-500/50 transition-all"
+                    style="transition-delay: 0.1s;">
+                    <i class="fab fa-microsoft text-5xl text-gray-600 dark:text-gray-400"></i>
+                </div>
+                <div class="page-section partner-logo flex items-center justify-center p-6 glass rounded-2xl border border-orange-500/20 hover:border-orange-500/50 transition-all"
+                    style="transition-delay: 0.2s;">
+                    <i class="fab fa-amazon text-5xl text-gray-600 dark:text-gray-400"></i>
+                </div>
+                <div class="page-section partner-logo flex items-center justify-center p-6 glass rounded-2xl border border-blue-500/20 hover:border-blue-500/50 transition-all"
+                    style="transition-delay: 0.3s;">
+                    <i class="fab fa-apple text-5xl text-gray-600 dark:text-gray-400"></i>
+                </div>
+                <div class="page-section partner-logo flex items-center justify-center p-6 glass rounded-2xl border border-orange-500/20 hover:border-orange-500/50 transition-all"
+                    style="transition-delay: 0.4s;">
+                    <i class="fab fa-facebook text-5xl text-gray-600 dark:text-gray-400"></i>
+                </div>
+                <div class="page-section partner-logo flex items-center justify-center p-6 glass rounded-2xl border border-blue-500/20 hover:border-blue-500/50 transition-all"
+                    style="transition-delay: 0.5s;">
+                    <i class="fab fa-netflix text-5xl text-gray-600 dark:text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- More Companies -->
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-4 mt-8 items-center">
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-orange-500/50 transition-all">
+                    <i class="fab fa-spotify text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-blue-500/50 transition-all">
+                    <i class="fab fa-uber text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-orange-500/50 transition-all">
+                    <i class="fab fa-airbnb text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-blue-500/50 transition-all">
+                    <i class="fab fa-slack text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-orange-500/50 transition-all">
+                    <i class="fab fa-stripe text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-blue-500/50 transition-all">
+                    <i class="fab fa-github text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-orange-500/50 transition-all">
+                    <i class="fab fa-linkedin text-3xl text-gray-500"></i>
+                </div>
+                <div
+                    class="page-section partner-logo flex items-center justify-center p-4 glass rounded-xl border border-gray-300/30 hover:border-blue-500/50 transition-all">
+                    <i class="fab fa-twitter text-3xl text-gray-500"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="py-24 relative">
+        <div class="container mx-auto px-6">
+            <div class="page-section">
+                <div class="card-bordered p-12 md:p-16 text-center neon-glow relative overflow-hidden">
+                    <!-- Background Decoration -->
+                    <div class="absolute top-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl"></div>
+                    <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
+
+                    <div class="relative z-10">
+                        <span
+                            class="inline-block px-4 py-2 bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-6 border border-orange-500/30">
+                            Start Your Journey Today
+                        </span>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                            Ready to <span class="gradient-text">Transform</span> Your Career?
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+                            Join 10,000+ students who have already taken the first step towards their dream tech career.
+                            Your success story starts here.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a href="index.html#courses"
+                                class="btn-shine w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 text-white rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/40 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3"
+                                style="background-size: 200% auto;">
+                                <span>Explore Courses</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="index.html#contact"
+                                class="w-full sm:w-auto px-10 py-4 glass rounded-2xl font-bold text-lg hover:bg-orange-500/10 transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3 border-2 border-orange-500/30">
+                                <i class="fas fa-comments text-blue-500"></i>
+                                <span>Talk to Us</span>
+                            </a>
+                        </div>
+
+                        <!-- Trust Badges -->
+                        <div class="flex flex-wrap items-center justify-center gap-6 mt-10">
+                            <div class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-shield-alt text-orange-500"></i>
+                                <span class="text-sm">30-Day Money Back</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-infinity text-blue-500"></i>
+                                <span class="text-sm">Lifetime Access</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-headset text-orange-400"></i>
+                                <span class="text-sm">24/7 Support</span>
+                            </div>
+                            <div class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-certificate text-blue-400"></i>
+                                <span class="text-sm">Certified Courses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="relative pt-24 pb-12 overflow-hidden">
+        <!-- Footer Background -->
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/5 to-blue-500/10 dark:from-transparent dark:via-orange-500/5 dark:to-blue-500/10">
+        </div>
+
+        <div class="container mx-auto px-6 relative">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/30">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold gradient-text">CodeMaster</span>
+                    </a>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Transform your future with industry-leading coding
+                        education. Join 10,000+ successful developers today.</p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all border border-orange-500/20">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-pink-500 hover:to-pink-600 hover:text-white transition-all border border-orange-500/20">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-500 hover:text-white transition-all border border-blue-500/20">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:text-white transition-all border border-blue-500/20">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Home</span></a></li>
+                        <li><a href="#about"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>About Us</span></a>
+                        </li>
+                        <li><a href="index.html#courses"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Courses</span></a>
+                        </li>
+                        <li><a href="index.html#contact"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Contact</span></a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Careers</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Courses -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Popular Courses</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>React.js
+                                    Masterclass</span></a></li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>Python for Data
+                                    Science</span></a></li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>Flutter
+                                    Development</span></a></li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>Node.js
+                                    Backend</span></a></li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
+                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>DevOps
+                                    Bootcamp</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Subscribe to get updates on new courses and special
+                        offers.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border border-orange-500/20">
+                        <button type="submit"
+                            class="w-full py-3 bg-gradient-to-r from-orange-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/30 transition-all">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-gray-200 dark:border-gray-800">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-gray-600 dark:text-gray-400 text-center md:text-left">
+                        © 2024 CodeMaster Academy. All rights reserved. Made with <span class="text-red-500">❤️</span>
+                        in India
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <a href="#"
+                            class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Privacy
+                            Policy</a>
+                        <a href="#"
+                            class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Terms of
+                            Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress"
+        class="fixed top-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-blue-500 z-50 transition-all duration-100"
+        style="width: 0%;"></div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-orange-500 to-blue-500 text-white rounded-full shadow-lg shadow-orange-500/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110 z-50 border-2 border-white/20">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-8 right-8 transform translate-y-20 opacity-0 transition-all duration-500 z-50">
+        <div class="glass rounded-2xl px-6 py-4 flex items-center space-x-4 shadow-2xl border-2 border-orange-500/30">
+            <div
+                class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                <i class="fas fa-check text-white"></i>
+            </div>
+            <div>
+                <h4 class="font-bold">Success!</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Action completed successfully!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function () {
+            initTheme();
+            initScrollAnimations();
+            initCounters();
+            initMobileMenu();
+            initNavbarScroll();
+            initSmoothScroll();
+            initScrollProgress();
+            initBackToTop();
+        });
+
+        // ==================== THEME TOGGLE ====================
+        function initTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+
+            if (localStorage.getItem('theme') === 'dark' ||
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
+        }
+
+        // ==================== SCROLL ANIMATIONS ====================
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('.page-section');
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // ==================== COUNTER ANIMATION ====================
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.dataset.target);
+                        const duration = 2000;
+                        const startTime = performance.now();
+
+                        function easeOutQuart(t) {
+                            return 1 - Math.pow(1 - t, 4);
+                        }
+
+                        function updateCounter(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const easedProgress = easeOutQuart(progress);
+                            const current = Math.floor(easedProgress * target);
+
+                            let suffix = '';
+                            if (target === 95) {
+                                suffix = '%';
+                            } else {
+                                suffix = '+';
+                            }
+
+                            counter.textContent = current.toLocaleString() + suffix;
+
+                            if (progress < 1) {
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target.toLocaleString() + suffix;
+                            }
+                        }
+
+                        requestAnimationFrame(updateCounter);
+                        observer.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        // ==================== MOBILE MENU ====================
+        function initMobileMenu() {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const body = document.body;
+
+            if (!menuBtn || !mobileMenu) return;
+
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('menu-open');
+                mobileMenu.classList.toggle('hidden');
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = '';
+                }
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menuBtn.classList.remove('menu-open');
+                    mobileMenu.classList.add('hidden');
+                    body.style.overflow = '';
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    menuBtn.classList.remove('menu-open');
+                    mobileMenu.classList.add('hidden');
+                    body.style.overflow = '';
+                }
+            });
+        }
+
+        // ==================== NAVBAR SCROLL ====================
+        function initNavbarScroll() {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            function updateNavbar() {
+                const currentScrollY = window.scrollY;
+                const navbarInner = navbar.querySelector('.glass');
+
+                if (currentScrollY > 100) {
+                    navbarInner.classList.add('shadow-lg', 'shadow-orange-500/10');
+                    navbar.style.padding = '0.5rem 0';
+                } else {
+                    navbarInner.classList.remove('shadow-lg', 'shadow-orange-500/10');
+                    navbar.style.padding = '0';
+                }
+
+                if (currentScrollY > lastScrollY && currentScrollY > 500) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+
+                lastScrollY = currentScrollY;
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateNavbar);
+                    ticking = true;
+                }
+            });
+        }
+
+        // ==================== SMOOTH SCROLL ====================
+        function initSmoothScroll() {
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const targetId = link.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerOffset = 100;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+        }
+
+        // ==================== SCROLL PROGRESS ====================
+        function initScrollProgress() {
+            const progressBar = document.getElementById('scrollProgress');
+            if (!progressBar) return;
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            });
+        }
+
+        // ==================== BACK TO TOP ====================
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (!backToTopBtn) return;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.visibility = 'visible';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.visibility = 'hidden';
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            backToTopBtn.addEventListener('mouseenter', () => {
+                backToTopBtn.style.transform = 'scale(1.1) translateY(-5px)';
+            });
+
+            backToTopBtn.addEventListener('mouseleave', () => {
+                backToTopBtn.style.transform = 'scale(1) translateY(0)';
+            });
+        }
+
+        // ==================== TOAST NOTIFICATION ====================
+        function showToast(type, message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+
+            const iconDiv = toast.querySelector('.w-10');
+            const title = toast.querySelector('h4');
+            const text = toast.querySelector('p');
+
+            if (type === 'success') {
+                iconDiv.className = 'w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center';
+                iconDiv.innerHTML = '<i class="fas fa-check text-white"></i>';
+                title.textContent = 'Success!';
+            } else if (type === 'error') {
+                iconDiv.className = 'w-10 h-10 bg-gradient-to-br from-red-500 to-rose-500 rounded-xl flex items-center justify-center';
+                iconDiv.innerHTML = '<i class="fas fa-times text-white"></i>';
+                title.textContent = 'Error!';
+            }
+
+            text.textContent = message;
+
+            toast.style.transform = 'translateY(0)';
+            toast.style.opacity = '1';
+
+            setTimeout(() => {
+                toast.style.transform = 'translateY(20px)';
+                toast.style.opacity = '0';
+            }, 5000);
+        }
+
+        // ==================== NEWSLETTER SUBSCRIPTION ====================
+        document.addEventListener('submit', (e) => {
+            if (e.target.closest('footer')) {
+                e.preventDefault();
+
+                const emailInput = e.target.querySelector('input[type="email"]');
+                const email = emailInput ? emailInput.value : '';
+
+                if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showToast('success', 'Thank you for subscribing to our newsletter!');
+                    emailInput.value = '';
+                } else {
+                    showToast('error', 'Please enter a valid email address.');
+                }
+            }
+        });
+
+        // ==================== CONSOLE EASTER EGG ====================
+        console.log('%c CodeMaster Academy - About Us ', 'background: linear-gradient(90deg, #f97316, #3b82f6); color: white; font-size: 24px; padding: 10px 20px; border-radius: 10px; font-weight: bold;');
+        console.log('%c Join us and transform your career! ', 'color: #f97316; font-size: 14px;');
+    </script>
+</body>
+
+</html>
