@@ -1,5 +1,6 @@
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function () {
+    initMouseTrail();
     initTheme();
     initScrollAnimations();
     initTypingAnimation();
@@ -15,6 +16,33 @@ document.addEventListener('DOMContentLoaded', function () {
     initCardHoverEffects();
     initParticles();
 });
+
+// ==================== MOUSE TRAIL ====================
+function initMouseTrail() {
+    const colors = ['#f97316', '#3b82f6', '#f59e0b', '#06b6d4'];
+    const particles = [];
+
+    document.addEventListener('mousemove', (e) => {
+        createParticle(e.clientX, e.clientY);
+    });
+
+    function createParticle(x, y) {
+        const particle = document.createElement('div');
+        particle.className = 'trail-particle';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        document.body.appendChild(particle);
+        particles.push(particle);
+
+        // Remove after animation
+        setTimeout(() => {
+            particle.remove();
+            particles.shift();
+        }, 500);
+    }
+}
 
 // ==================== THEME TOGGLE ====================
 function initTheme() {
@@ -477,22 +505,32 @@ function initBackToTop() {
 function initCardHoverEffects() {
     const cards = document.querySelectorAll('.card-3d, .course-card, .glass');
 
+    // ✅ Easy to adjust these values
+    const ROTATION_INTENSITY = 50;  // Higher = less rotation (20=strong, 50=subtle, 100=minimal)
+    const SCALE_AMOUNT = 1.01;      // 1.00 = no scale, 1.02 = noticeable
+    const ENABLE_3D = true;         // Set false to disable 3D effect completely
+
     cards.forEach(card => {
-        card.addEventListener('mouseenter', (e) => {
+        card.addEventListener('mouseenter', () => {
             card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
         });
 
         card.addEventListener('mousemove', (e) => {
+            if (!ENABLE_3D) {
+                card.style.transform = `scale(${SCALE_AMOUNT})`;
+                return;
+            }
+
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
+            const rotateX = (y - centerY) / ROTATION_INTENSITY;
+            const rotateY = (centerX - x) / ROTATION_INTENSITY;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${SCALE_AMOUNT})`;
         });
 
         card.addEventListener('mouseleave', () => {
