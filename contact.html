@@ -4,281 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - CodeMaster Academy</title>
+    <title>CodeMaster Academy - Learn to Code</title>
+    <script src="dist/js/darklight.js" type="module"></script>
     <link href="dist/output.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="dist/fontawesome-free-7.1.0-web/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-
-
-    darkMode: 'class',
-    theme: {
-    extend: {
-    fontFamily: {
-    poppins: ['Poppins', 'sans-serif'],
-    },
-    colors: {
-    primary: {
-    50: '#fff7ed',
-    100: '#ffedd5',
-    200: '#fed7aa',
-    300: '#fdba74',
-    400: '#fb923c',
-    500: '#f97316',
-    600: '#ea580c',
-    700: '#c2410c',
-    800: '#9a3412',
-    900: '#7c2d12',
-    },
-    secondary: {
-    50: '#eff6ff',
-    100: '#dbeafe',
-    200: '#bfdbfe',
-    300: '#93c5fd',
-    400: '#60a5fa',
-    500: '#3b82f6',
-    600: '#2563eb',
-    700: '#1d4ed8',
-    800: '#1e40af',
-    900: '#1e3a8a',
-    }
-    },
-    animation: {
-    'float': 'float 6s ease-in-out infinite',
-    'float-delay': 'float 6s ease-in-out 2s infinite',
-    'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-    'gradient': 'gradient 8s ease infinite',
-    'bounce-slow': 'bounce 3s ease-in-out infinite',
-    'spin-slow': 'spin 8s linear infinite',
-    'slide-up': 'slideUp 0.5s ease-out',
-    'fade-in': 'fadeIn 0.5s ease-out',
-    'scale-in': 'scaleIn 0.5s ease-out',
-    },
-    keyframes: {
-    float: {
-    '0%, 100%': { transform: 'translateY(0px)' },
-    '50%': { transform: 'translateY(-20px)' },
-    },
-    'pulse-glow': {
-    '0%, 100%': { boxShadow: '0 0 20px rgba(249, 115, 22, 0.5)' },
-    '50%': { boxShadow: '0 0 40px rgba(249, 115, 22, 0.8)' },
-    },
-    gradient: {
-    '0%, 100%': { backgroundPosition: '0% 50%' },
-    '50%': { backgroundPosition: '100% 50%' },
-    },
-    slideUp: {
-    '0%': { transform: 'translateY(100px)', opacity: '0' },
-    '100%': { transform: 'translateY(0)', opacity: '1' },
-    },
-    fadeIn: {
-    '0%': { opacity: '0' },
-    '100%': { opacity: '1' },
-    },
-    scaleIn: {
-    '0%': { transform: 'scale(0.8)', opacity: '0' },
-    '100%': { transform: 'scale(1)', opacity: '1' },
-    },
-    },
-    },
-    },
-    }
-    </script>
-
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1e1e2e;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #f97316, #3b82f6);
-            border-radius: 10px;
-        }
-
-        /* Gradient Text */
-        .gradient-text {
-            background: linear-gradient(135deg, #f97316, #3b82f6, #f97316);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 200%;
-            animation: gradient 5s ease infinite;
-        }
-
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .dark .glass {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Card with Orange-Blue Border */
-        .card-bordered {
-            position: relative;
-            background: white;
-            border-radius: 1.5rem;
-            overflow: hidden;
-        }
-
-        .dark .card-bordered {
-            background: #1a1a2e;
-        }
-
-        .card-bordered::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 2px;
-            background: linear-gradient(135deg, #f97316, #3b82f6, #f97316);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            border-radius: inherit;
-            background-size: 200% 200%;
-            animation: gradient 5s ease infinite;
-        }
-
-        /* Neon Glow Orange-Blue */
-        .neon-glow {
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3),
-                0 0 40px rgba(59, 130, 246, 0.2);
-        }
-
-        /* Blob Animation */
-        .blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.5;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        /* Page Section Animation */
-        .page-section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .page-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Button Shine Effect */
-        .btn-shine {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-shine::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-shine:hover::before {
-            left: 100%;
-        }
-
-        /* Contact Card Hover */
-        .contact-card {
-            transition: all 0.4s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* Input Focus */
-        .input-field:focus {
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
-        }
-
-        /* FAQ Accordion */
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        /* Map Container */
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1.5rem;
-        }
-
-        .map-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            padding: 2px;
-            background: linear-gradient(135deg, #f97316, #3b82f6, #f97316);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            border-radius: inherit;
-            background-size: 200% 200%;
-            animation: gradient 5s ease infinite;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        /* Social Icon Hover */
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        /* Typing Animation */
-        .typing-cursor {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                opacity: 1;
-            }
-
-            51%,
-            100% {
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 
 <body
@@ -286,28 +17,36 @@
 
     <!-- Animated Background -->
     <div class="fixed inset-0 pointer-events-none overflow-hidden">
+        <!-- Gradient Blobs - Orange and Blue -->
         <div class="blob w-96 h-96 bg-orange-500 top-0 -left-48 opacity-30 dark:opacity-20"></div>
         <div class="blob w-96 h-96 bg-blue-500 bottom-0 -right-48 opacity-30 dark:opacity-20"
             style="animation-delay: 2s;"></div>
         <div class="blob w-64 h-64 bg-orange-400 top-1/2 left-1/2 opacity-20 dark:opacity-10"
             style="animation-delay: 4s;"></div>
 
+        <!-- Grid Pattern -->
         <div class="absolute inset-0 opacity-5 dark:opacity-10"
             style="background-image: linear-gradient(rgba(249, 115, 22, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.5) 1px, transparent 1px); background-size: 50px 50px;">
         </div>
+
+        <!-- Code Rain Container -->
+        <div id="codeRain" class="absolute inset-0 overflow-hidden"></div>
     </div>
 
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
         <div class="container mx-auto px-6 py-4">
-            <div class="glass rounded-2xl px-6 py-4 flex items-center justify-between border-2 border-orange-500/20">
+            <div class="glass rounded-2xl px-6 py-4 flex items-center justify-between border-2 border-orange-500/30">
                 <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-3 group">
+                <a href="#home" class="flex items-center space-x-3 group">
                     <div
-                        class="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-400 to-blue-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-orange-500/30">
+                        class="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-400 to-blue-500 rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
                         <i class="fas fa-code text-white text-xl"></i>
                     </div>
-                    <span class="text-2xl font-bold gradient-text">CodeMaster</span>
+                    <div class="hidden md:flex flex-col">
+                        <span class="text-2xl font-bold gradient-text leading-tight">Hash Programming</span>
+                        <span class="text-xs text-gray-600 dark:text-gray-400 font-medium">Coding Classes</span>
+                    </div>
                 </a>
 
                 <!-- Desktop Menu -->
@@ -342,798 +81,349 @@
                 <div class="flex items-center space-x-4">
                     <!-- Dark/Light Mode Toggle -->
                     <button id="themeToggle"
-                        class="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300 focus:outline-none group border-2 border-orange-500/30">
-                        <div class="absolute inset-0 rounded-full overflow-hidden">
+                        class="relative w-16 h-8 bg-gray-200 dark:bg-gray-700 rounded-full p-1 transition-colors duration-300 focus:outline-none group border border-orange-500/50 cursor-pointer">
+
+                        <div class="absolute inset-0 rounded-full overflow-hidden -z-10">
                             <div
-                                class="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-0 dark:opacity-100 transition-opacity duration-300">
+                                class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 dark:opacity-100 transition-opacity duration-300">
                             </div>
                             <div
-                                class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-100 dark:opacity-0 transition-opacity duration-300">
+                                class="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500 opacity-100 dark:opacity-0 transition-opacity duration-300">
                             </div>
                         </div>
+
                         <div
-                            class="relative w-6 h-6 bg-white rounded-full shadow-lg transform transition-transform duration-300 dark:translate-x-8 flex items-center justify-center">
-                            <i class="fas fa-sun text-orange-500 text-xs dark:hidden"></i>
-                            <i class="fas fa-moon text-blue-500 text-xs hidden dark:block"></i>
+                            class="relative w-6 h-6 bg-white dark:bg-gray-800 rounded-full shadow-lg transform transition-transform duration-300 dark:translate-x-8 flex items-center justify-center z-10 overflow-hidden">
+
+                            <i
+                                class="fas fa-moon text-gray-700 text-xs absolute transition-all duration-300 opacity-100 rotate-0 scale-100 dark:opacity-0 dark:-rotate-90 dark:scale-0">
+                            </i>
+
+                            <i
+                                class="fas fa-sun text-orange-400 text-xs absolute transition-all duration-300 opacity-0 rotate-90 scale-0 dark:opacity-100 dark:rotate-0 dark:scale-100">
+                            </i>
+
                         </div>
                     </button>
+
+                    <!-- CTA Button -->
+                    <a href="#courses"
+                        class="hidden sm:block btn-shine magnetic-btn px-6 py-2.5 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/30 transform hover:scale-105 transition-all duration-300 background-size-200 hover:bg-right border-2 border-white/20"
+                        style="background-size: 200% auto;">
+                        Start Learning
+                    </a>
 
                     <!-- Mobile Menu Button -->
                     <button id="mobileMenuBtn"
                         class="md:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none">
-                        <span class="menu-line line1 w-6 h-0.5 bg-gray-700 dark:bg-white rounded transition-all"></span>
-                        <span class="menu-line line2 w-6 h-0.5 bg-gray-700 dark:bg-white rounded transition-all"></span>
-                        <span class="menu-line line3 w-6 h-0.5 bg-gray-700 dark:bg-white rounded transition-all"></span>
+                        <span class="menu-line line1 w-6 h-0.5 bg-gray-700 dark:bg-white rounded"></span>
+                        <span class="menu-line line2 w-6 h-0.5 bg-gray-700 dark:bg-white rounded"></span>
+                        <span class="menu-line line3 w-6 h-0.5 bg-gray-700 dark:bg-white rounded"></span>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile Menu -->
             <div id="mobileMenu"
-                class="md:hidden glass rounded-2xl mt-4 p-6 hidden animate-slide-down border-2 border-orange-500/20">
+                class="md:hidden glass rounded-2xl mt-4 p-6 hidden animate-slide-down border-2 border-orange-500/30">
                 <div class="flex flex-col space-y-4">
-                    <a href="index.html"
+                    <a href="#home"
                         class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
                         <i class="fas fa-home mr-3 text-orange-500"></i> Home
                     </a>
-                    <a href="about.html"
+                    <a href="#about"
                         class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
                         <i class="fas fa-info-circle mr-3 text-blue-500"></i> About
                     </a>
-                    <a href="courses.html"
+                    <a href="#courses"
                         class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
-                        <i class="fas fa-book mr-3 text-orange-400"></i> Courses
+                        <i class="fas fa-book mr-3 text-orange-500"></i> Courses
                     </a>
                     <a href="#contact"
-                        class="mobile-nav-link py-3 px-4 rounded-xl bg-orange-500/20 font-medium text-orange-500">
-                        <i class="fas fa-envelope mr-3 text-orange-500"></i> Contact
+                        class="mobile-nav-link py-3 px-4 rounded-xl hover:bg-orange-500/20 transition-colors font-medium">
+                        <i class="fas fa-envelope mr-3 text-blue-500"></i> Contact
+                    </a>
+                    <a href="#courses"
+                        class="btn-shine py-3 px-4 bg-gradient-to-r from-orange-500 to-blue-500 text-white rounded-xl font-semibold text-center">
+                        Start Learning
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="min-h-[60vh] flex items-center justify-center relative pt-32 pb-16 overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="text-center page-section">
-                <!-- Badge -->
-                <div
-                    class="inline-flex items-center space-x-2 bg-orange-500/10 dark:bg-orange-500/20 px-4 py-2 rounded-full mb-6 border border-orange-500/30">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    <span class="text-sm font-medium text-orange-600 dark:text-orange-400">💬 We're Here to Help</span>
-                </div>
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="py-24 mt-10 relative overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-orange-500/5 to-blue-500/5 rounded-full blur-3xl">
+            </div>
+        </div>
 
-                <!-- Heading -->
-                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6">
-                    <span class="block">Get In Touch</span>
-                    <span class="gradient-text">With Us</span>
-                </h1>
-
-                <!-- Description -->
-                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
-                    Have questions about our courses? Need help with enrollment? We're here 24/7 to assist you on your
-                    learning journey.
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16 page-section">
+                <span
+                    class="inline-block px-4 py-2 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
+                    <i class="fas fa-headset mr-2"></i>Contact Us
+                </span>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6">
+                    Get In <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Have questions? We'd love to hear from you. Reach out to us through any of these channels!
                 </p>
+            </div>
 
-                <!-- Quick Contact Options -->
-                <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-                    <a href="tel:+919876543210"
-                        class="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">
-                        <div class="w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-phone text-orange-500"></i>
+            <!-- Main Contact Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 page-section">
+                <!-- WhatsApp Card -->
+                <a href="https://wa.me/919876543210?text=Hi!%20I'm%20interested%20in%20your%20courses.%20Please%20share%20more%20details."
+                    target="_blank"
+                    class="group glass rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-green-500/20 transition-all duration-500 transform hover:-translate-y-3 border-2 border-green-500/30 hover:border-green-500/60 cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-green-500/30 mb-6">
+                        <i class="fab fa-whatsapp text-white text-4xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 group-hover:text-green-500 transition-colors">WhatsApp</h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Chat with us instantly</p>
+                    <span
+                        class="inline-flex items-center text-green-500 font-semibold group-hover:gap-2 transition-all">
+                        Message Now <i
+                            class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+
+                <!-- Call Card -->
+                <a href="tel:+919876543210"
+                    class="group glass rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:-translate-y-3 border-2 border-blue-500/30 hover:border-blue-500/60 cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-blue-500/30 mb-6">
+                        <i class="fas fa-phone-alt text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 group-hover:text-blue-500 transition-colors">Call Us</h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">+91 98765 43210</p>
+                    <span class="inline-flex items-center text-blue-500 font-semibold group-hover:gap-2 transition-all">
+                        Call Now <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+
+                <!-- Email Card -->
+                <a href="mailto:hello@codemaster.com"
+                    class="group glass rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 transform hover:-translate-y-3 border-2 border-orange-500/30 hover:border-orange-500/60 cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-orange-500/30 mb-6">
+                        <i class="fas fa-envelope text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 group-hover:text-orange-500 transition-colors">Email Us</h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">hello@codemaster.com</p>
+                    <span
+                        class="inline-flex items-center text-orange-500 font-semibold group-hover:gap-2 transition-all">
+                        Send Email <i
+                            class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+
+                <!-- Location Card -->
+                <a href="https://maps.google.com/?q=Koregaon+Park+Pune" target="_blank"
+                    class="group glass rounded-3xl p-8 text-center hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:-translate-y-3 border-2 border-purple-500/30 hover:border-purple-500/60 cursor-pointer">
+                    <div
+                        class="w-20 h-20 mx-auto bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl shadow-purple-500/30 mb-6">
+                        <i class="fas fa-map-marker-alt text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2 group-hover:text-purple-500 transition-colors">Visit Us</h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Koregaon Park, Pune</p>
+                    <span
+                        class="inline-flex items-center text-purple-500 font-semibold group-hover:gap-2 transition-all">
+                        Get Directions <i
+                            class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Info Banner -->
+            <div class="page-section mb-12">
+                <div
+                    class="glass rounded-3xl p-8 md:p-12 border-2 border-gradient bg-gradient-to-r from-orange-500/5 via-transparent to-blue-500/5 relative overflow-hidden">
+                    <!-- Decorative Elements -->
+                    <div class="absolute top-0 right-0 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl"></div>
+                    <div class="absolute bottom-0 left-0 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+                    <div class="grid md:grid-cols-3 gap-8 relative z-10">
+                        <!-- Working Hours -->
+                        <div class="text-center md:text-left">
+                            <div
+                                class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-2xl mb-4 shadow-lg shadow-orange-500/30">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">Working Hours</h4>
+                            <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <p class="flex items-center justify-center md:justify-start gap-2">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                                    Mon - Sat: 9:00 AM - 9:00 PM
+                                </p>
+                                <p class="flex items-center justify-center md:justify-start gap-2">
+                                    <span class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></span>
+                                    Sunday: 10:00 AM - 6:00 PM
+                                </p>
+                            </div>
                         </div>
-                        <span class="font-semibold">+91 98765 43210</span>
-                    </a>
-                    <a href="mailto:hello@codemaster.com"
-                        class="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">
-                        <div class="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-envelope text-blue-500"></i>
+
+                        <!-- Quick Response -->
+                        <div class="text-center">
+                            <div
+                                class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mb-4 shadow-lg shadow-blue-500/30">
+                                <i class="fas fa-bolt text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">Quick Response</h4>
+                            <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <p>We typically respond within</p>
+                                <p class="text-3xl font-black gradient-text">30 Minutes</p>
+                            </div>
                         </div>
-                        <span class="font-semibold">hello@codemaster.com</span>
-                    </a>
-                    <div class="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
-                        <div class="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
-                            <i class="fas fa-clock text-green-500"></i>
+
+                        <!-- Support -->
+                        <div class="text-center md:text-right">
+                            <div
+                                class="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl mb-4 shadow-lg shadow-green-500/30 md:ml-auto">
+                                <i class="fas fa-headset text-white text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">24/7 Support</h4>
+                            <div class="space-y-2 text-gray-600 dark:text-gray-400">
+                                <p>Get help anytime via</p>
+                                <p class="font-semibold text-green-500">WhatsApp & Email</p>
+                            </div>
                         </div>
-                        <span class="font-semibold">24/7 Support</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ==================== CONTACT INFO CARDS ==================== -->
-    <section class="py-16 relative">
-        <div class="container mx-auto px-6">
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 - Address -->
-                <div class="contact-card page-section">
-                    <div
-                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+            <!-- Address & Social Section -->
+            <div class="grid lg:grid-cols-2 gap-8 page-section">
+                <!-- Full Address Card -->
+                <div
+                    class="glass rounded-3xl p-8 border-2 border-orange-500/30 hover:border-orange-500/60 transition-all duration-300 group">
+                    <div class="flex items-start gap-6">
                         <div
-                            class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/30 animate-float">
-                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                            class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-orange-500/30">
+                            <i class="fas fa-building text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Our Office</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">
-                            123 Tech Park, Koramangala<br>
-                            Bangalore, Karnataka 560034<br>
-                            India
-                        </p>
+                        <div>
+                            <h4 class="text-2xl font-bold mb-3">Our Office</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">
+                                123 Tech Park, 4th Floor,<br>
+                                Koregaon Park,<br>
+                                Pune, Maharashtra 411001,<br>
+                                India
+                            </p>
+                            <a href="https://maps.google.com/?q=Koregaon+Park+Pune" target="_blank"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/30 transform hover:scale-105 transition-all duration-300">
+                                <i class="fas fa-directions"></i>
+                                Get Directions
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2 - Phone -->
-                <div class="contact-card page-section" style="transition-delay: 0.1s;">
-                    <div
-                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 animate-float"
-                            style="animation-delay: 1s;">
-                            <i class="fas fa-phone-alt text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Phone</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">
-                            <a href="tel:+919876543210" class="hover:text-orange-500 transition-colors">+91 98765
-                                43210</a><br>
-                            <a href="tel:+918765432109" class="hover:text-orange-500 transition-colors">+91 87654
-                                32109</a><br>
-                            <span class="text-xs">(Mon-Sat, 9AM-9PM)</span>
-                        </p>
-                    </div>
-                </div>
+                <!-- Social Links Card -->
+                <div
+                    class="glass rounded-3xl p-8 border-2 border-blue-500/30 hover:border-blue-500/60 transition-all duration-300">
+                    <h4 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span
+                            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-share-alt text-white"></i>
+                        </span>
+                        Follow Us
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Stay connected with us on social media for updates,
+                        tips & more!</p>
 
-                <!-- Card 3 - Email -->
-                <div class="contact-card page-section" style="transition-delay: 0.2s;">
-                    <div
-                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/30 animate-float"
-                            style="animation-delay: 2s;">
-                            <i class="fas fa-envelope text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Email</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">
-                            <a href="mailto:hello@codemaster.com"
-                                class="hover:text-orange-500 transition-colors">hello@codemaster.com</a><br>
-                            <a href="mailto:support@codemaster.com"
-                                class="hover:text-orange-500 transition-colors">support@codemaster.com</a><br>
-                            <a href="mailto:careers@codemaster.com"
-                                class="hover:text-orange-500 transition-colors">careers@codemaster.com</a>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 4 - Live Chat -->
-                <div class="contact-card page-section" style="transition-delay: 0.3s;">
-                    <div
-                        class="card-bordered p-6 text-center h-full hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
-                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-500/30 animate-float"
-                            style="animation-delay: 3s;">
-                            <i class="fas fa-comments text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Live Chat</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
-                            Get instant answers to your questions with our live chat support.
-                        </p>
-                        <button
-                            class="px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm rounded-xl font-semibold hover:shadow-lg transition-all">
-                            Start Chat
-                        </button>
+                    <div class="grid grid-cols-5 gap-4">
+                        <a href="#" class="group/social">
+                            <div
+                                class="w-full aspect-square bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-white hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg shadow-blue-500/30">
+                                <i class="fab fa-facebook-f text-2xl"></i>
+                            </div>
+                            <p
+                                class="text-center text-xs mt-2 text-gray-500 group-hover/social:text-blue-500 transition-colors">
+                                Facebook</p>
+                        </a>
+                        <a href="#" class="group/social">
+                            <div
+                                class="w-full aspect-square bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded-2xl flex items-center justify-center text-white hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg shadow-pink-500/30">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </div>
+                            <p
+                                class="text-center text-xs mt-2 text-gray-500 group-hover/social:text-pink-500 transition-colors">
+                                Instagram</p>
+                        </a>
+                        <a href="#" class="group/social">
+                            <div
+                                class="w-full aspect-square bg-gradient-to-br from-sky-400 to-sky-500 rounded-2xl flex items-center justify-center text-white hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg shadow-sky-500/30">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </div>
+                            <p
+                                class="text-center text-xs mt-2 text-gray-500 group-hover/social:text-sky-500 transition-colors">
+                                Twitter</p>
+                        </a>
+                        <a href="#" class="group/social">
+                            <div
+                                class="w-full aspect-square bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg shadow-blue-500/30">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
+                            </div>
+                            <p
+                                class="text-center text-xs mt-2 text-gray-500 group-hover/social:text-blue-500 transition-colors">
+                                LinkedIn</p>
+                        </a>
+                        <a href="#" class="group/social">
+                            <div
+                                class="w-full aspect-square bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg shadow-red-500/30">
+                                <i class="fab fa-youtube text-2xl"></i>
+                            </div>
+                            <p
+                                class="text-center text-xs mt-2 text-gray-500 group-hover/social:text-red-500 transition-colors">
+                                YouTube</p>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- ==================== MAIN CONTACT SECTION ==================== -->
-    <section id="contact" class="py-24 relative bg-gradient-to-b from-transparent via-orange-500/5 to-transparent">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- Map Location -->
+            <div class="mt-16 page-section">
+                <div
+                    class="glass rounded-3xl p-10 md:p-14 border-2 border-transparent bg-gradient-to-r from-orange-500/10 via-purple-500/10 to-blue-500/10 relative overflow-hidden">
+                    <!-- Animated Background -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-orange-500/20 rounded-full blur-2xl animate-bounce"
+                            style="animation-duration: 3s;"></div>
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500/20 rounded-full blur-2xl animate-bounce"
+                            style="animation-duration: 4s;"></div>
+                    </div>
 
-                <!-- Contact Form -->
-                <div class="page-section">
-                    <div class="card-bordered p-8 md:p-10 neon-glow">
-                        <div class="mb-8">
-                            <span
-                                class="inline-block px-4 py-2 bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4 border border-orange-500/30">
-                                Send Message
-                            </span>
-                            <h2 class="text-3xl sm:text-4xl font-black mb-2">
-                                Let's <span class="gradient-text">Talk</span>
-                            </h2>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                Fill out the form below and we'll get back to you within 24 hours.
+                    <div class="relative z-10">
+                        <div class="text-center mb-8">
+                            <div
+                                class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-blue-500 rounded-3xl mb-6 shadow-xl">
+                                <i class="fas fa-map-marker-alt text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-3xl md:text-4xl font-black mb-4">Find Us Here</h3>
+                            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+                                Visit our office and meet our team in person!
                             </p>
                         </div>
 
-                        <form id="contactForm" class="space-y-6">
-                            <!-- Name Fields -->
-                            <div class="grid sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">First Name <span
-                                            class="text-red-500">*</span></label>
-                                    <input type="text" name="firstName" required
-                                        class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30"
-                                        placeholder="John">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Last Name <span
-                                            class="text-red-500">*</span></label>
-                                    <input type="text" name="lastName" required
-                                        class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30"
-                                        placeholder="Doe">
-                                </div>
-                            </div>
-
-                            <!-- Email & Phone -->
-                            <div class="grid sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Email Address <span
-                                            class="text-red-500">*</span></label>
-                                    <input type="email" name="email" required
-                                        class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30"
-                                        placeholder="john@example.com">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold mb-2">Phone Number</label>
-                                    <input type="tel" name="phone"
-                                        class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30"
-                                        placeholder="+91 98765 43210">
-                                </div>
-                            </div>
-
-                            <!-- Subject -->
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Subject <span
-                                        class="text-red-500">*</span></label>
-                                <select name="subject" required
-                                    class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30">
-                                    <option value="">Select a subject</option>
-                                    <option value="courses">Course Inquiry</option>
-                                    <option value="enrollment">Enrollment Help</option>
-                                    <option value="technical">Technical Support</option>
-                                    <option value="payment">Payment Issues</option>
-                                    <option value="partnership">Partnership</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <!-- Course Interest -->
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Interested Course (Optional)</label>
-                                <select name="course"
-                                    class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30">
-                                    <option value="">Select a course</option>
-                                    <option value="react">Complete React.js Masterclass</option>
-                                    <option value="python">Python for Data Science</option>
-                                    <option value="flutter">Flutter & Dart Complete Guide</option>
-                                    <option value="nodejs">Node.js & Express Mastery</option>
-                                    <option value="devops">Docker & Kubernetes Bootcamp</option>
-                                    <option value="ai">Deep Learning & Neural Networks</option>
-                                    <option value="uiux">Complete UI/UX Design with Figma</option>
-                                </select>
-                            </div>
-
-                            <!-- Message -->
-                            <div>
-                                <label class="block text-sm font-semibold mb-2">Your Message <span
-                                        class="text-red-500">*</span></label>
-                                <textarea name="message" rows="5" required
-                                    class="input-field w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30 resize-none"
-                                    placeholder="Tell us how we can help you..."></textarea>
-                            </div>
-
-                            <!-- Checkbox -->
-                            <div class="flex items-start space-x-3">
-                                <input type="checkbox" id="newsletter" name="newsletter"
-                                    class="mt-1 w-5 h-5 rounded border-gray-300 text-orange-500 focus:ring-orange-500">
-                                <label for="newsletter" class="text-sm text-gray-600 dark:text-gray-400">
-                                    Subscribe to our newsletter for course updates, tips, and exclusive offers.
-                                </label>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <button type="submit"
-                                class="btn-shine w-full py-4 bg-gradient-to-r from-orange-500 via-orange-400 to-blue-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/40 transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Right Side - Map & Info -->
-                <div class="space-y-8">
-                    <!-- Map -->
-                    <div class="page-section" style="transition-delay: 0.2s;">
-                        <div class="map-container h-80">
+                        <!-- Map Container -->
+                        <div class="rounded-2xl overflow-hidden shadow-xl border-4 border-white/20">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5985698621855!2d77.61170981482218!3d12.935025590878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1448818bb0c1%3A0x8a5a7e6f9f8f7d8e!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                                width="100%" height="100%" style="border:0; border-radius: 1.5rem;" allowfullscreen=""
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093747!2d-122.41941548468204!3d37.77492997975892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1234567890"
+                                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" class="w-full">
                             </iframe>
                         </div>
-                    </div>
-
-                    <!-- Working Hours -->
-                    <div class="page-section" style="transition-delay: 0.3s;">
-                        <div class="card-bordered p-6">
-                            <h3 class="text-xl font-bold mb-4 flex items-center">
-                                <i class="fas fa-clock text-orange-500 mr-3"></i>
-                                Working Hours
-                            </h3>
-                            <div class="space-y-3">
-                                <div
-                                    class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
-                                    <span class="text-gray-600 dark:text-gray-400">Monday - Friday</span>
-                                    <span class="font-semibold text-green-500">9:00 AM - 9:00 PM</span>
-                                </div>
-                                <div
-                                    class="flex justify-between items-center py-2 border-b border-gray-200 dark:border-gray-700">
-                                    <span class="text-gray-600 dark:text-gray-400">Saturday</span>
-                                    <span class="font-semibold text-green-500">10:00 AM - 6:00 PM</span>
-                                </div>
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="text-gray-600 dark:text-gray-400">Sunday</span>
-                                    <span class="font-semibold text-orange-500">Closed</span>
-                                </div>
-                            </div>
-                            <div class="mt-4 p-3 bg-green-500/10 rounded-xl border border-green-500/30">
-                                <p class="text-sm text-green-600 dark:text-green-400 flex items-center">
-                                    <i class="fas fa-headset mr-2"></i>
-                                    Online support is available 24/7
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Media -->
-                    <div class="page-section" style="transition-delay: 0.4s;">
-                        <div class="card-bordered p-6">
-                            <h3 class="text-xl font-bold mb-4 flex items-center">
-                                <i class="fas fa-share-alt text-blue-500 mr-3"></i>
-                                Connect With Us
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-4">Follow us on social media for updates,
-                                tips, and community.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                                    <i class="fab fa-facebook-f text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-pink-500/30">
-                                    <i class="fab fa-instagram text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-400/30">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-800 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-700/30">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-red-500/30">
-                                    <i class="fab fa-youtube text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center text-white shadow-lg shadow-gray-800/30">
-                                    <i class="fab fa-github text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-500/30">
-                                    <i class="fab fa-discord text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="social-icon w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                                    <i class="fab fa-telegram-plane text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SUPPORT OPTIONS ==================== -->
-    <section class="py-24 relative">
-        <div class="container mx-auto px-6">
-            <!-- Section Header -->
-            <div class="text-center mb-16 page-section">
-                <span
-                    class="inline-block px-4 py-2 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
-                    Support Options
-                </span>
-                <h2 class="text-4xl sm:text-5xl font-black mb-6">
-                    How Can We <span class="gradient-text">Help You?</span>
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    Choose the best way to get the help you need
-                </p>
-            </div>
-
-            <!-- Support Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Help Center -->
-                <div class="contact-card page-section">
-                    <div
-                        class="card-bordered p-8 h-full text-center hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl flex items-center justify-center shadow-lg shadow-orange-500/30">
-                            <i class="fas fa-book-open text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Help Center</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Browse our extensive documentation and find
-                            answers to common questions.</p>
-                        <a href="#"
-                            class="inline-flex items-center space-x-2 text-orange-500 font-semibold hover:text-orange-600 transition-colors">
-                            <span>Visit Help Center</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Community Forum -->
-                <div class="contact-card page-section" style="transition-delay: 0.1s;">
-                    <div
-                        class="card-bordered p-8 h-full text-center hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-                            <i class="fas fa-users text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Community Forum</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Connect with 10,000+ learners and get peer
-                            support from the community.</p>
-                        <a href="#"
-                            class="inline-flex items-center space-x-2 text-blue-500 font-semibold hover:text-blue-600 transition-colors">
-                            <span>Join Community</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Video Tutorials -->
-                <div class="contact-card page-section" style="transition-delay: 0.2s;">
-                    <div
-                        class="card-bordered p-8 h-full text-center hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-400 to-blue-500 rounded-3xl flex items-center justify-center shadow-lg shadow-orange-500/30">
-                            <i class="fas fa-play-circle text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Video Tutorials</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Watch step-by-step video guides for navigating
-                            our platform.</p>
-                        <a href="#"
-                            class="inline-flex items-center space-x-2 text-orange-500 font-semibold hover:text-orange-600 transition-colors">
-                            <span>Watch Tutorials</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Email Support -->
-                <div class="contact-card page-section" style="transition-delay: 0.3s;">
-                    <div
-                        class="card-bordered p-8 h-full text-center hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-400 to-blue-500 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-                            <i class="fas fa-envelope-open-text text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Email Support</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Send us a detailed message and get a response
-                            within 24 hours.</p>
-                        <a href="mailto:support@codemaster.com"
-                            class="inline-flex items-center space-x-2 text-blue-500 font-semibold hover:text-blue-600 transition-colors">
-                            <span>Send Email</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Schedule Call -->
-                <div class="contact-card page-section" style="transition-delay: 0.4s;">
-                    <div
-                        class="card-bordered p-8 h-full text-center hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center shadow-lg shadow-green-500/30">
-                            <i class="fas fa-calendar-check text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">Schedule a Call</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Book a free consultation call with our team at
-                            your convenience.</p>
-                        <a href="#"
-                            class="inline-flex items-center space-x-2 text-green-500 font-semibold hover:text-green-600 transition-colors">
-                            <span>Book Now</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- WhatsApp -->
-                <div class="contact-card page-section" style="transition-delay: 0.5s;">
-                    <div
-                        class="card-bordered p-8 h-full text-center hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-400 to-green-500 rounded-3xl flex items-center justify-center shadow-lg shadow-green-500/30">
-                            <i class="fab fa-whatsapp text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-3">WhatsApp</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Chat with us on WhatsApp for quick and instant
-                            support.</p>
-                        <a href="https://wa.me/919876543210" target="_blank"
-                            class="inline-flex items-center space-x-2 text-green-500 font-semibold hover:text-green-600 transition-colors">
-                            <span>Chat on WhatsApp</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FAQ SECTION ==================== -->
-    <section class="py-24 relative bg-gradient-to-b from-transparent via-blue-500/5 to-transparent">
-        <div class="container mx-auto px-6">
-            <!-- Section Header -->
-            <div class="text-center mb-16 page-section">
-                <span
-                    class="inline-block px-4 py-2 bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 rounded-full text-sm font-semibold mb-4 border border-orange-500/30">
-                    FAQ
-                </span>
-                <h2 class="text-4xl sm:text-5xl font-black mb-6">
-                    Frequently Asked <span class="gradient-text">Questions</span>
-                </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                    Find quick answers to common questions
-                </p>
-            </div>
-
-            <!-- FAQ Accordion -->
-            <div class="max-w-3xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="page-section faq-item">
-                    <div class="card-bordered overflow-hidden">
-                        <button
-                            class="faq-question w-full px-6 py-4 flex items-center justify-between text-left font-semibold hover:bg-orange-500/5 transition-colors">
-                            <span>How do I reset my password?</span>
-                            <i class="faq-icon fas fa-plus text-orange-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4">
-                            <p class="text-gray-600 dark:text-gray-400">Click on "Forgot Password" on the login page,
-                                enter your registered email address, and we'll send you a password reset link. The link
-                                is valid for 24 hours.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="page-section faq-item" style="transition-delay: 0.1s;">
-                    <div class="card-bordered overflow-hidden">
-                        <button
-                            class="faq-question w-full px-6 py-4 flex items-center justify-between text-left font-semibold hover:bg-orange-500/5 transition-colors">
-                            <span>What payment methods do you accept?</span>
-                            <i class="faq-icon fas fa-plus text-orange-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4">
-                            <p class="text-gray-600 dark:text-gray-400">We accept all major credit/debit cards, UPI, Net
-                                Banking, Paytm, and EMI options. For international payments, we accept PayPal and
-                                international cards.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="page-section faq-item" style="transition-delay: 0.2s;">
-                    <div class="card-bordered overflow-hidden">
-                        <button
-                            class="faq-question w-full px-6 py-4 flex items-center justify-between text-left font-semibold hover:bg-orange-500/5 transition-colors">
-                            <span>How can I get a refund?</span>
-                            <i class="faq-icon fas fa-plus text-orange-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4">
-                            <p class="text-gray-600 dark:text-gray-400">We offer a 30-day money-back guarantee on all
-                                courses. Simply contact our support team within 30 days of purchase with your order
-                                details, and we'll process your refund within 5-7 business days.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="page-section faq-item" style="transition-delay: 0.3s;">
-                    <div class="card-bordered overflow-hidden">
-                        <button
-                            class="faq-question w-full px-6 py-4 flex items-center justify-between text-left font-semibold hover:bg-orange-500/5 transition-colors">
-                            <span>Can I access courses on mobile devices?</span>
-                            <i class="faq-icon fas fa-plus text-orange-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4">
-                            <p class="text-gray-600 dark:text-gray-400">Yes! Our platform is fully responsive and works
-                                on all devices. We also have iOS and Android apps that allow you to download courses for
-                                offline viewing.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="page-section faq-item" style="transition-delay: 0.4s;">
-                    <div class="card-bordered overflow-hidden">
-                        <button
-                            class="faq-question w-full px-6 py-4 flex items-center justify-between text-left font-semibold hover:bg-orange-500/5 transition-colors">
-                            <span>How do I contact my instructor?</span>
-                            <i class="faq-icon fas fa-plus text-orange-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4">
-                            <p class="text-gray-600 dark:text-gray-400">Each course has a Q&A section where you can post
-                                questions directly to the instructor. You can also reach out through the course
-                                discussion forum or send a direct message through your dashboard.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="page-section faq-item" style="transition-delay: 0.5s;">
-                    <div class="card-bordered overflow-hidden">
-                        <button
-                            class="faq-question w-full px-6 py-4 flex items-center justify-between text-left font-semibold hover:bg-orange-500/5 transition-colors">
-                            <span>Do you offer corporate training?</span>
-                            <i class="faq-icon fas fa-plus text-orange-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-answer px-6 pb-4">
-                            <p class="text-gray-600 dark:text-gray-400">Yes! We offer customized corporate training
-                                solutions for teams of all sizes. Contact our sales team at enterprise@codemaster.com or
-                                fill out the contact form above for a custom quote.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- More Questions CTA -->
-            <div class="text-center mt-12 page-section">
-                <p class="text-gray-600 dark:text-gray-400 mb-4">Still have questions?</p>
-                <a href="#contact"
-                    class="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-blue-500 text-white rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/30 hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                    <span>Contact Us</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== OFFICES SECTION ==================== -->
-    <section class="py-24 relative">
-        <div class="container mx-auto px-6">
-            <!-- Section Header -->
-            <div class="text-center mb-16 page-section">
-                <span
-                    class="inline-block px-4 py-2 bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mb-4 border border-blue-500/30">
-                    Our Locations
-                </span>
-                <h2 class="text-4xl sm:text-5xl font-black mb-6">
-                    Visit Our <span class="gradient-text">Offices</span>
-                </h2>
-            </div>
-
-            <!-- Offices Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Bangalore Office -->
-                <div class="contact-card page-section">
-                    <div class="card-bordered p-6 h-full hover:shadow-xl transition-all duration-300">
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
-                                <i class="fas fa-building text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-1">Bangalore (HQ)</h3>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
-                                    123 Tech Park, 5th Floor<br>
-                                    Koramangala, Bangalore 560034
-                                </p>
-                                <p class="text-sm mb-3">
-                                    <i class="fas fa-phone text-orange-500 mr-2"></i>
-                                    +91 98765 43210
-                                </p>
-                                <a href="#"
-                                    class="text-orange-500 text-sm font-semibold hover:text-orange-600 transition-colors">
-                                    Get Directions <i class="fas fa-arrow-right ml-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Mumbai Office -->
-                <div class="contact-card page-section" style="transition-delay: 0.1s;">
-                    <div class="card-bordered p-6 h-full hover:shadow-xl transition-all duration-300">
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
-                                <i class="fas fa-building text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-1">Mumbai</h3>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
-                                    456 Business Hub, 12th Floor<br>
-                                    Bandra Kurla Complex, Mumbai 400051
-                                </p>
-                                <p class="text-sm mb-3">
-                                    <i class="fas fa-phone text-blue-500 mr-2"></i>
-                                    +91 87654 32109
-                                </p>
-                                <a href="#"
-                                    class="text-blue-500 text-sm font-semibold hover:text-blue-600 transition-colors">
-                                    Get Directions <i class="fas fa-arrow-right ml-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Delhi Office -->
-                <div class="contact-card page-section" style="transition-delay: 0.2s;">
-                    <div class="card-bordered p-6 h-full hover:shadow-xl transition-all duration-300">
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-14 h-14 bg-gradient-to-br from-orange-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
-                                <i class="fas fa-building text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-1">New Delhi</h3>
-                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
-                                    789 Corporate Tower, 8th Floor<br>
-                                    Cyber City, Gurugram 122002
-                                </p>
-                                <p class="text-sm mb-3">
-                                    <i class="fas fa-phone text-orange-500 mr-2"></i>
-                                    +91 76543 21098
-                                </p>
-                                <a href="#"
-                                    class="text-orange-500 text-sm font-semibold hover:text-orange-600 transition-colors">
-                                    Get Directions <i class="fas fa-arrow-right ml-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== NEWSLETTER CTA ==================== -->
-    <section class="py-24 relative">
-        <div class="container mx-auto px-6">
-            <div class="page-section">
-                <div class="card-bordered p-12 md:p-16 text-center neon-glow relative overflow-hidden">
-                    <div class="absolute top-0 left-0 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl"></div>
-                    <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
-
-                    <div class="relative z-10">
-                        <div
-                            class="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-orange-500 to-blue-500 rounded-3xl flex items-center justify-center shadow-lg shadow-orange-500/30">
-                            <i class="fas fa-bell text-white text-3xl"></i>
-                        </div>
-                        <h2 class="text-4xl sm:text-5xl font-black mb-6">
-                            Stay <span class="gradient-text">Updated</span>
-                        </h2>
-                        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-                            Subscribe to our newsletter for exclusive course updates, coding tips, and special offers.
-                        </p>
-
-                        <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
-                            <input type="email" placeholder="Enter your email address"
-                                class="flex-1 px-6 py-4 bg-gray-100 dark:bg-gray-800 rounded-2xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent hover:border-orange-500/30 text-lg">
-                            <button type="submit"
-                                class="btn-shine px-8 py-4 bg-gradient-to-r from-orange-500 to-blue-500 text-white rounded-2xl font-bold text-lg shadow-xl shadow-orange-500/30 hover:shadow-2xl transform hover:scale-105 transition-all duration-300 whitespace-nowrap">
-                                Subscribe <i class="fas fa-arrow-right ml-2"></i>
-                            </button>
-                        </form>
-
-                        <p class="text-sm text-gray-500 mt-4">
-                            <i class="fas fa-lock mr-1"></i> We respect your privacy. Unsubscribe anytime.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -1141,7 +431,9 @@
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="relative pt-24 pb-12 overflow-hidden">
+    <footer class="relative pt-24 pb-12 overflow-hidden border-t-2"
+        style="border-image: linear-gradient(90deg, #f97316, #3b82f6) 1;">
+        <!-- Footer Background -->
         <div
             class="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/5 to-blue-500/10 dark:from-transparent dark:via-orange-500/5 dark:to-blue-500/10">
         </div>
@@ -1150,9 +442,9 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <!-- Brand -->
                 <div>
-                    <a href="index.html" class="flex items-center space-x-3 mb-6">
+                    <a href="#home" class="flex items-center space-x-3 mb-6">
                         <div
-                            class="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/30">
+                            class="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-400 to-blue-500 rounded-xl flex items-center justify-center">
                             <i class="fas fa-code text-white text-xl"></i>
                         </div>
                         <span class="text-2xl font-bold gradient-text">CodeMaster</span>
@@ -1161,19 +453,19 @@
                         education. Join 10,000+ successful developers today.</p>
                     <div class="flex space-x-3">
                         <a href="#"
-                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all border border-orange-500/20">
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-pink-500 hover:to-pink-600 hover:text-white transition-all border border-orange-500/20">
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-500 hover:text-white transition-all border border-blue-500/20">
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors">
                             <i class="fab fa-twitter"></i>
                         </a>
                         <a href="#"
-                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:text-white transition-all border border-blue-500/20">
+                            class="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -1183,67 +475,59 @@
                 <div>
                     <h4 class="text-lg font-bold mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html"
-                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Home</span></a></li>
-                        <li><a href="about.html"
-                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>About Us</span></a>
+                        <li><a href="#home"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Home</a>
                         </li>
-                        <li><a href="courses.html"
-                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Courses</span></a>
+                        <li><a href="#about"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">About
+                                Us</a></li>
+                        <li><a href="#courses"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Courses</a>
                         </li>
                         <li><a href="#contact"
-                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-orange-500"></i><span>Contact</span></a>
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Contact</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Careers</a>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Support -->
+                <!-- Courses -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6">Support</h4>
+                    <h4 class="text-lg font-bold mb-6">Popular Courses</h4>
                     <ul class="space-y-3">
                         <li><a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>Help Center</span></a>
-                        </li>
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">React.js
+                                Masterclass</a></li>
                         <li><a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>FAQ</span></a></li>
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">Python
+                                for Data Science</a></li>
                         <li><a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>Community
-                                    Forum</span></a></li>
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">Flutter
+                                Development</a></li>
                         <li><a href="#"
-                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors flex items-center space-x-2"><i
-                                    class="fas fa-chevron-right text-xs text-blue-500"></i><span>Report Issue</span></a>
-                        </li>
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">Node.js
+                                Backend</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">DevOps
+                                Bootcamp</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- Newsletter -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6">Contact Info</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <i class="fas fa-map-marker-alt text-orange-500 mt-1"></i>
-                            <span class="text-gray-600 dark:text-gray-400 text-sm">123 Tech Park, Koramangala, Bangalore
-                                560034</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fas fa-phone text-blue-500"></i>
-                            <a href="tel:+919876543210"
-                                class="text-gray-600 dark:text-gray-400 text-sm hover:text-orange-500 transition-colors">+91
-                                98765 43210</a>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <i class="fas fa-envelope text-orange-500"></i>
-                            <a href="mailto:hello@codemaster.com"
-                                class="text-gray-600 dark:text-gray-400 text-sm hover:text-orange-500 transition-colors">hello@codemaster.com</a>
-                        </li>
-                    </ul>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Subscribe to get updates on new courses and special
+                        offers.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all border-2 border-transparent focus:border-orange-500">
+                        <button type="submit"
+                            class="w-full py-3 bg-gradient-to-r from-orange-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-orange-500/30 transition-all">
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -1251,15 +535,14 @@
             <div class="pt-8 border-t border-gray-200 dark:border-gray-800">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p class="text-gray-600 dark:text-gray-400 text-center md:text-left">
-                        © 2024 CodeMaster Academy. All rights reserved. Made with <span class="text-red-500">❤️</span>
-                        in India
+                        © 2024 CodeMaster Academy. All rights reserved. Made with ❤️ in India
                     </p>
                     <div class="flex items-center space-x-6">
                         <a href="#"
                             class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Privacy
                             Policy</a>
-                        <a href="#"
-                            class="text-gray-600 dark:text-gray-400 hover:text-orange-500 transition-colors">Terms of
+                        <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500 transition-colors">Terms
+                            of
                             Service</a>
                     </div>
                 </div>
@@ -1267,156 +550,22 @@
         </div>
     </footer>
 
-    <!-- Scroll Progress Bar -->
-    <div id="scrollProgress"
-        class="fixed top-0 left-0 h-1 bg-gradient-to-r from-orange-500 to-blue-500 z-50 transition-all duration-100"
-        style="width: 0%;"></div>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop"
-        class="fixed bottom-8 left-8 w-14 h-14 bg-gradient-to-br from-orange-500 to-blue-500 text-white rounded-full shadow-lg shadow-orange-500/30 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:scale-110 z-50 border-2 border-white/20">
-        <i class="fas fa-arrow-up text-xl"></i>
-    </button>
-
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-8 right-8 transform translate-y-20 opacity-0 transition-all duration-500 z-50">
-        <div class="glass rounded-2xl px-6 py-4 flex items-center space-x-4 shadow-2xl border-2 border-green-500/30">
+        <div class="glass rounded-2xl px-6 py-4 flex items-center space-x-4 shadow-2xl border-2 border-green-500/50">
             <div
                 class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
                 <i class="fas fa-check text-white"></i>
             </div>
             <div>
-                <h4 class="font-bold">Message Sent!</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">We'll get back to you soon.</p>
+                <h4 class="font-bold">Success!</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Message sent successfully!</p>
             </div>
         </div>
     </div>
 
     <!-- JavaScript -->
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-
-        // Check for saved theme preference or default to dark
-        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuBtn.querySelectorAll('.menu-line').forEach((line, index) => {
-                if (!mobileMenu.classList.contains('hidden')) {
-                    if (index === 0) line.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    if (index === 1) line.style.opacity = '0';
-                    if (index === 2) line.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-                } else {
-                    line.style.transform = '';
-                    line.style.opacity = '';
-                }
-            });
-        });
-
-        // Scroll Progress & Back to Top
-        const scrollProgress = document.getElementById('scrollProgress');
-        const backToTop = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            scrollProgress.style.width = scrolled + '%';
-
-            if (winScroll > 500) {
-                backToTop.classList.remove('opacity-0', 'invisible');
-                backToTop.classList.add('opacity-100', 'visible');
-            } else {
-                backToTop.classList.add('opacity-0', 'invisible');
-                backToTop.classList.remove('opacity-100', 'visible');
-            }
-        });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Page Section Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.page-section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.closest('.faq-item');
-                const isActive = faqItem.classList.contains('active');
-
-                // Close all FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
-            });
-        });
-
-        // Contact Form Submission
-        const contactForm = document.getElementById('contactForm');
-        const toast = document.getElementById('toast');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Show toast notification
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            // Hide toast after 5 seconds
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 5000);
-
-            // Reset form
-            contactForm.reset();
-        });
-
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('py-2');
-            } else {
-                navbar.classList.remove('py-2');
-            }
-        });
-    </script>
-
+    <script src="/dist/js/main.js"></script>
 </body>
 
 </html>
