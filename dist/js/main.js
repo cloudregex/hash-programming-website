@@ -93,7 +93,7 @@ function initScrollAnimations() {
 
 // ==================== TYPING ANIMATION ====================
 function initTypingAnimation() {
-    const texts = ['Web Development', 'Mobile Apps', 'Data Science', 'Machine Learning', 'Cloud Computing', 'UI/UX Design'];
+    const texts = ['Java','PHP', 'MERN', 'Python', 'Android', 'Node.js',  'Angular', 'Tailwind', 'JavaScript', 'React.js', 'BootStrap', 'Flutter', 'React Native', 'MongoDB', 'Spring Boot', 'Django', 'Dart', ];
     const typingElement = document.getElementById('typingText');
 
     if (!typingElement) return;
